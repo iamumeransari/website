@@ -1,0 +1,24 @@
+# == Schema Information
+#
+# Table name: articles
+#
+#  id             :integer          not null, primary key
+#  title          :string
+#  slug           :string
+#  content        :text
+#  publish_at     :datetime
+#  author_name    :string
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  meta_image_url :string
+#
+
+one:
+  title: "Gamification: Leveling Up Your Personal Finance Game"
+  slug: gamification-level-up-personal-finance
+  content: >
+    Sometimes, budgeting can feel like a chore. It’s talked about on every platform on this planet
+    and of course, when it comes to budgeting apps, there’s no shortage of advice as
+    I’m sure you’ve seen with one Google Search.
+  publish_at: 2024-04-29 15:00:34
+  author_name: Nethmi Dimbulana

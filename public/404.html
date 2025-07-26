@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <title>Page Not Found - Sure</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background-color: #f9fafb;
+      color: #1f2937;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    
+    .container {
+      text-align: center;
+      padding: 2rem;
+      max-width: 600px;
+    }
+    
+    .error-code {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      margin-bottom: 2rem;
+      font-size: 1.875rem;
+      font-weight: 600;
+      color: #374151;
+      font-family: monospace;
+    }
+    
+    h1 {
+      font-size: 3rem;
+      font-weight: 500;
+      margin: 0 0 1rem 0;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+    }
+    
+    p {
+      font-size: 1.25rem;
+      color: #6b7280;
+      margin: 0 0 2rem 0;
+      line-height: 1.4;
+    }
+    
+    .button-group {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    a {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    
+    .primary-button {
+      background-color: #111827;
+      color: white;
+      border: 1px solid #111827;
+    }
+    
+    .primary-button:hover {
+      background-color: #1f2937;
+      border-color: #1f2937;
+    }
+    
+    .secondary-button {
+      background-color: transparent;
+      color: #111827;
+      border: 1px solid #d1d5db;
+    }
+    
+    .secondary-button:hover {
+      background-color: #f9fafb;
+      border-color: #9ca3af;
+    }
+    
+    .links {
+      margin-top: 4rem;
+      padding-top: 4rem;
+      border-top: 1px solid #e5e7eb;
+    }
+    
+    .links p {
+      font-size: 0.875rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .link-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    
+    .link-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      transition: background-color 0.2s;
+    }
+    
+    .link-item:hover {
+      background-color: #f3f4f6;
+    }
+    
+    .link-item strong {
+      color: #111827;
+      font-size: 0.875rem;
+      margin-bottom: 0.25rem;
+    }
+    
+    .link-item span {
+      color: #6b7280;
+      font-size: 0.75rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="error-code">404</div>
+    
+    <h1>Oops! Page not found</h1>
+    
+    <p>The page you're looking for might have been moved, deleted, or maybe it never existed in the first place.</p>
+    
+    <div class="button-group">
+      <a href="/" class="primary-button">Go back home</a>
+      <a href="/tools" class="secondary-button">View all tools</a>
+    </div>
+    
+    <div class="links">
+      <p>Here are some helpful links instead:</p>
+      <div class="link-grid">
+        <a href="/articles" class="link-item">
+          <strong>Blog</strong>
+          <span>Read our articles</span>
+        </a>
+        <a href="/tools" class="link-item">
+          <strong>Tools</strong>
+          <span>Financial calculators</span>
+        </a>
+        <a href="https://discord.gg/FTzQqpnwSh" class="link-item">
+          <strong>Support</strong>
+          <span>Join our Discord</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

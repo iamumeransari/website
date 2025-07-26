@@ -1,0 +1,120 @@
+{
+  "ignored_warnings": [
+    {
+      "warning_type": "Dynamic Render Path",
+      "warning_code": 15,
+      "fingerprint": "25e995406f3bca9920380bbd5c8ddf97a8ee2a9e791346046ec93675bc83487f",
+      "check_name": "Render",
+      "message": "Render path contains parameter value",
+      "file": "app/views/tools/index.html.erb",
+      "line": 27,
+      "link": "https://brakemanscanner.org/docs/warning_types/dynamic_render_path/",
+      "code": "render(action => Tool.all.where(:category_slug => params[:category]).where(\"title ILIKE ?\", \"%#{ActiveRecord::Base.sanitize_sql_like(params[:q].to_s.strip)}%\"), {})",
+      "render_path": [
+        {
+          "type": "controller",
+          "class": "ToolsController",
+          "method": "index",
+          "line": 12,
+          "file": "app/controllers/tools_controller.rb",
+          "rendered": {
+            "name": "tools/index",
+            "file": "app/views/tools/index.html.erb"
+          }
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "tools/index"
+      },
+      "user_input": "params[:q].to_s.strip",
+      "confidence": "Weak",
+      "cwe_id": [
+        22
+      ],
+      "note": ""
+    },
+    {
+      "warning_type": "Cross-Site Scripting",
+      "warning_code": 2,
+      "fingerprint": "3026bb3b6c40ac30ac9996c6226b94f769315e5804d4c741f7ac91b816f398f7",
+      "check_name": "CrossSiteScripting",
+      "message": "Unescaped model attribute",
+      "file": "app/views/stocks/show.html.erb",
+      "line": 27,
+      "link": "https://brakemanscanner.org/docs/warning_types/cross_site_scripting",
+      "code": "Rails.cache.read(\"stock_page/#{(Stock.find_by(:symbol => symbol, :mic_code => mic_code) or Stock.find_by(:symbol => params[:ticker])).symbol}:#{(Stock.find_by(:symbol => symbol, :mic_code => mic_code) or Stock.find_by(:symbol => params[:ticker])).mic_code}\")",
+      "render_path": [
+        {
+          "type": "controller",
+          "class": "StocksController",
+          "method": "show",
+          "line": 90,
+          "file": "app/controllers/stocks_controller.rb",
+          "rendered": {
+            "name": "stocks/show",
+            "file": "app/views/stocks/show.html.erb"
+          }
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "stocks/show"
+      },
+      "user_input": "Stock.find_by(:symbol => symbol, :mic_code => mic_code)",
+      "confidence": "Weak",
+      "cwe_id": [
+        79
+      ],
+      "note": ""
+    },
+    {
+      "warning_type": "Dynamic Render Path",
+      "warning_code": 15,
+      "fingerprint": "5b759e03496d3b84f5a16fb305b1006d06427d8313ae1c75e38dd8ebba6eee39",
+      "check_name": "Render",
+      "message": "Render path contains parameter value",
+      "file": "app/controllers/features_controller.rb",
+      "line": 28,
+      "link": "https://brakemanscanner.org/docs/warning_types/dynamic_render_path/",
+      "code": "render(partial => \"features/assistant_#{determine_active_category(params[:category])}\", { :locals => ({ :content => load_assistant_data(determine_active_category(params[:category])) }) })",
+      "render_path": null,
+      "location": {
+        "type": "method",
+        "class": "FeaturesController",
+        "method": "assistant_content"
+      },
+      "user_input": "params[:category]",
+      "confidence": "Weak",
+      "cwe_id": [
+        22
+      ],
+      "note": ""
+    },
+    {
+      "warning_type": "Dangerous Eval",
+      "warning_code": 13,
+      "fingerprint": "7bfde17285d92c67b7d86b47667adff9bc26f97a16539b8e15fe3afbbfa69eea",
+      "check_name": "Evaluation",
+      "message": "Dynamic string evaluated as code",
+      "file": "app/helpers/application_form_builder.rb",
+      "line": 10,
+      "link": "https://brakemanscanner.org/docs/warning_types/dangerous_eval/",
+      "code": "class_eval(\"      def #{selector}(method, options = {})\\n        default_options = { class: \\\"form-field__input\\\" }\\n        merged_options = default_options.merge(options)\\n\\n        return super(method, merged_options) unless options[:label]\\n\\n        @template.form_field_tag do\\n          label(method, *label_args(options)) +\\n          super(method, merged_options.except(:label))\\n        end\\n      end\\n\", \"app/helpers/application_form_builder.rb\", (10 + 1))",
+      "render_path": null,
+      "location": {
+        "type": "method",
+        "class": "ApplicationFormBuilder",
+        "method": null
+      },
+      "user_input": null,
+      "confidence": "Weak",
+      "cwe_id": [
+        913,
+        95
+      ],
+      "note": ""
+    }
+  ],
+  "brakeman_version": "7.0.2"
+}
